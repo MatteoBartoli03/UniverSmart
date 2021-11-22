@@ -1,5 +1,0 @@
-IdMatricola, Cognome, Nome
-2, b, b
-1, a, a
-4, b, b
-3, f, f

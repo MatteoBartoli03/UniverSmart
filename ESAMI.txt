@@ -1,3 +1,0 @@
-IdMatricola, IdMateria
-3, 1
-2, 3

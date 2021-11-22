@@ -1,21 +1,27 @@
-max_materie = 3
-materie=int(input("Inserisci numero di materie: "))
+from functions import print_file, add_line_file
 
-if materie > max_materie:
-	print("superato numero massimo di materie possibili")
-	exit()
+def materia():
+	while True:
+		print()
+		print("-----------------------------------------------------------------------------------------------------")
+		print()
+		print("MENU' MATERIE")
+		print("1. stampa elenco materie")
+		print("2. inserisci una nuova materia")
+		print("3. torna indietro")
+		opt = input("cosa vuoi fare? ")
 
-file = open("MATERIE.csv", "w+")
-file.write("IdMateria, Materia")
-
-array_materie = []
-
-for a in range(materie):
-	materia=dict()
-	materia["IdMateria"] = input("inserisci il numero di materia: ")
-	materia["Materia"] = input("inserisci la materia: ")
-	array_materie.append(materia)
-	file.write("\n"+materia["IdMateria"]+", "+materia["Materia"])
-
-for i in range(num):
-	print(array_materie[i])
+		if opt == "1":
+			print()
+			print("Elenco materie:")
+			print_file("materie.csv")
+			input()
+		elif opt == "2":
+			add_line_file("materie.csv")
+			input()
+		elif opt == "3":
+			break
+		else:
+			print()
+			print("Ritenta sarai più fortunato")
+			input()

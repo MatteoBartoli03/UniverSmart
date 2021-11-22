@@ -1,35 +1,31 @@
-max_record = 10
-num=int(input("Inserisci numero di matricole: "))
+from functions import print_file, add_line_file, data_from_IdM
 
-if num > max_record:
-	print("superato numero massimo di matricole possibili")
-	exit()
+def matricola():
+	while True:
+		print()
+		print("-----------------------------------------------------------------------------------------------------")
+		print()
+		print("MENU' MATRICOLE")
+		print("1. stampa elenco matricole")
+		print("2. inserisci un nuovo studente")
+		print("3. stampa i dati di uno studente inserendo il numero di matricola")
+		print("4. torna indietro")
+		opt = input("cosa vuoi fare oggi? ")
 
-file = open("MATRICOLE.txt", "a")
-
-array_matricole = []
-
-for persona in range(num):
-	matricola=dict()
-	matricola["IdMatricola"] = input("inserisci il numero di matricola: ")
-	matricola["Cognome"] = input("inserisci il cognome della matricola: ")
-	matricola["Nome"] = input("inserisci il nome della matricola: ")
-	array_matricole.append(matricola)
-	file.write("\n"+matricola["IdMatricola"]+", "+matricola["Cognome"]+", "+matricola["Nome"])
-
-file.close()
-file = open("MATRICOLE.txt", "r")
-
-
-for i in range(num):
-	print(array_matricole[i])
-
-while True:
-	opt = input("Scrivi 1 se vuoi conoscere i dati di uno studente altrimenti premi un altro tasto: ")
-	if (opt == "1"):
-		n = input("inserisci il numero di matricola: ")
-		for i in array_matricole:
-			if (i["IdMatricola"] == n):
-				print(i)
-	else:
-		break
+		if opt == "1":
+			print()
+			print("Elenco matricole:")
+			print_file("matricole.csv")
+			input()
+		elif opt == "2":
+			add_line_file("matricole.csv")
+			input()
+		elif opt == "3":
+			data_from_IdM()
+			input()
+		elif opt == "4":
+			break
+		else:
+			print()
+			print("Ritenta sarai più fortunato")
+			input()
