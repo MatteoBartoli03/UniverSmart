@@ -1,6 +1,6 @@
 def add_line_file(x):
     print()
-    if x == "matricole.csv":
+    if x == "matricole.txt":
         file = open(x, "a")
         mat = str(len(array_file(x)))
         cog = input("Inserisci il cognome dello studente: ")
@@ -9,7 +9,7 @@ def add_line_file(x):
         file.close()
         print("Il numero di matricola che verrà attribuito a " + cog + " " + nom + " e' " + mat)
         return 0
-    elif x == "materie.csv":
+    elif x == "materie.txt":
         file = open(x, "a")
         num = str(len(array_file(x)))
         mat = input("Inserisci il nome della materia: ")
@@ -43,7 +43,7 @@ def print_file(x):
 def data_from_IdM():
     n = input("Inserisci il numero di matricola: ")
 
-    file = array_file("matricole.csv")    
+    file = array_file("matricole.txt")    
     for a in file:
         if (a[0] == str(n)):
             print("Lo studente avente come numero di matricola " + str(n) + " e' " + a[1] + " " + a[2] )

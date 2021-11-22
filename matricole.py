@@ -15,10 +15,10 @@ def matricola():
 		if opt == "1":
 			print()
 			print("Elenco matricole:")
-			print_file("matricole.csv")
+			print_file("matricole.txt")
 			input()
 		elif opt == "2":
-			add_line_file("matricole.csv")
+			add_line_file("matricole.txt")
 			input()
 		elif opt == "3":
 			data_from_IdM()

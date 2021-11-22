@@ -14,10 +14,10 @@ def materia():
 		if opt == "1":
 			print()
 			print("Elenco materie:")
-			print_file("materie.csv")
+			print_file("materie.txt")
 			input()
 		elif opt == "2":
-			add_line_file("materie.csv")
+			add_line_file("materie.txt")
 			input()
 		elif opt == "3":
 			break

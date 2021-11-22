@@ -1,11 +1,11 @@
-file = open("MATERIE.csv", "w")
+file = open("MATERIE.txt", "w")
 file.write("IdMateria, Materia")
 file.close()
 
-file = open("MATRICOLE.csv", "w")
+file = open("MATRICOLE.txt", "w")
 file.write("IdMatricola, Cognome, Nome")
 file.close()
 
-file = open("ESAMI.csv", "w")
+file = open("ESAMI.txt", "w")
 file.write("IdMatricola, IdMateria")
 file.close()
