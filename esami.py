@@ -1,16 +1,35 @@
-max_esami = 3
-esami=int(input("Inserisci numero di esami da sostenere: "))
+from functions import print_file, add_line_file
 
-if esami > max_esami:
-	print("superato numero massimo di esami possibili")
-	exit()
+def esame():
+	while True:
+		print()
+		print("-----------------------------------------------------------------------------------------------------")
+		print()
+		print("MENU' ESAMI")
+		print("1. stampa elenco esami per idMatricola-idMateria")
+		print("2. inserisci un nuovo esame")
+		print("3. inserisci esito pagamento di un esame indicando il suo id")
+		print("4. inserisci esito esame indicando il suo id")
+		print("5. torna indietro")
+		print()
+		opt = input("cosa vuoi fare? ")
 
-file = open("ESAMI.txt", "w+")
-file.write("IdMatricola, IdMateria")
-
-esame=dict()
-
-for b in range(esami):
-	esame["IdMatricola"] = input("inserisci il numero di matricola: ")
-	esame["IdMateria"] = input("inserisci il numero di materia: ")
-	file.write("\n"+esame["IdMatricola"]+", "+esame["IdMateria"])
+		if opt == "1":
+			print()
+			print("Elenco esami")
+			print_file("esami.txt")
+			print()
+			input("premi un tasto per continuare")
+		elif opt == "2":
+			add_line_file("esami.txt")
+			print()
+			input("premi un tasto per continuare")
+		elif opt == "3":
+			change_esito_pagamento()
+		elif opt == "5":
+			break
+		else:
+			print()
+			print("Ritenta sarai più fortunato")
+			print()
+			
