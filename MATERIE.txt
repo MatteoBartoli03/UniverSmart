@@ -1,4 +1,0 @@
-IdMateria, Materia, Prezzo_Esame
-1, Informatica, 50
-2, Matematica, 69
-3, Biologia, 34

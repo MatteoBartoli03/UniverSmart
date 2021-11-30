@@ -1,0 +1,5 @@
+IdEsame, IdMatricola, IdMateria, PagamentoEffettuato, EsitoEsame, timestamp
+1, 1, 2, False, notPassed, null
+2, 2, 3, True, passed, 1638291465.100536
+3, 4, 1, True, notPassed, null
+4, 2, 1, False, notPassed, null

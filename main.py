@@ -1,9 +1,11 @@
 from matricole import matricola
 from materie import materia  
 from esami import esame
+import os
 #con i from si importano delle funzioni da altri file, in questo caso matricola() da matricole.py
 
 while True:
+	os.system("CLS")
 	print()
 	print("-----------------------------------------------------------------------------------------------------")
 	print("-----------------------------------------------------------------------------------------------------")
