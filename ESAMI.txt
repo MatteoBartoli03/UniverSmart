@@ -1,1 +1,2 @@
-IdMatricola, IdMateria
+IdEsame, IdMatricola, IdMateria, PagamentoEffettuato, EsitoEsame
+1, 1, 2, False, False

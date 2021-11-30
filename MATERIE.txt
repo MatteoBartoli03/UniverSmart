@@ -1,4 +1,4 @@
-IdMateria, Materia
-1, Anatomia
-2, Chimica
-3, Storia
+IdMateria, Materia, Prezzo_Esame
+1, Informatica, 50
+2, Matematica, 69
+3, Biologia, 34
