@@ -2,11 +2,6 @@ IdEsame, IdMatricola, IdMateria, PagamentoEffettuato, EsitoEsame, timestamp
 1, 1, 2, True, passed, 1638295103.984303
 2, 2, 3, True, passed, 1638291465.100536
 3, 4, 1, True, passed, 1638295479.950084
-4, 2, 1, True, passed, 1638295303.674703
-5, 1, 3, True, passed, 1638295932.592724
-6, 1, 1, True, passed, 1638296024.625694
-7, 2, 2, True, passed, 1638296917.004182
-8, 3, 1, True, passed, 1638297655.655193
-9, 4, 4, True, passed, 1638298667.702553
-10, 5, 5, True, passed, 1638298681.723592
-11, 5, 4, True, passed, 1638298698.993874
+4, 2, 2, False, notPassed, null
+5, 1, 1, True, passed, 1638342459.795983
+6, 2, 1, False, notPassed, null

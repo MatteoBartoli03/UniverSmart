@@ -8,7 +8,7 @@ def esame():
 		print("-----------------------------------------------------------------------------------------------------")
 		print()
 		print("MENU' ESAMI")
-		print("1. stampa elenco esami per per idMatricola-idMateria")
+		print("1. stampa elenco esami")
 		print("2. inserisci un nuovo esame")
 		print("3. versare pagamento della quota esame")
 		print("4. inserisci esito esame")

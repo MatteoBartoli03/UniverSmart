@@ -1,5 +1,5 @@
-import os
 import datetime
+import os
 
 def add_line_file(x):
     print()
@@ -30,7 +30,7 @@ def add_line_file(x):
         materia= input ("Inserisci l'id della materia argomento di esame: ")
         esito_Pagamento = False
         esito_Esame = "notPassed"
-        timestamp = ""
+        timestamp = "null"
 
         file.write("\n"+ IdEsame +  ", " + matricola.capitalize() + ", " + materia.capitalize() +  ", " + str(esito_Pagamento) + ", " + str(esito_Esame) + ", " + str(timestamp))
         file.close()
@@ -60,8 +60,8 @@ def print_file(x):
 
     if x=="materie.csv":
         for line in file:
-            if (file.index(line)=="1"):
-                print(line[0] + " " + line[1] + " " + line[2]) ##provato a non far stampare € di fianco a prezzo esame
+            if (file.index(line)==0):
+                print(line[0] + " " + line[1] + " " + line[2])
             else:
                 print(line[0] + " " + line[1] + " " + line[2]+"€")
     else:
@@ -71,11 +71,6 @@ def print_file(x):
             else:
                 print(line[0] + " " + line[1] + " " + line[2] + " " + line[3] + " " + line[4] + " " + line[5])
     return 0
-
-
-
-
-   
 
 def data_from_IdM():
     n = input("Inserisci il numero di matricola: ")
@@ -167,7 +162,6 @@ def change_esito_pagamento():
 
 def change_esito_esame():
 
-    import os
     file_esami_iniziale = array_file("esami.csv")
     print()
     matricola = str(input("inserisci il numero di matricola: "))
@@ -180,29 +174,34 @@ def change_esito_esame():
                 if (status == 0):
                     idEsame = esame[0]
                     if esame[4] == 'notPassed':
-                        print()
-                        print("Risulta che l'esame non è ancora stato passato!")
-                        print("- premere 1 per inserire l'esito")
-                        print("- premere un qualsiasi altro carattere per tornare al menu precedente")
-                        ris = input()
-                        if ris == "1":
+                        if esame[3] == 'True':
                             print()
-                            ris2 = input("Digitare 1 se l'esame è stato passato, mentre digitare 2 se non è stato passato: ")
-                            if ris2 == "1":
-                                file_esami_iniziale[int(idEsame)][4] = 'passed'
-                                ct = datetime.datetime.now()
-                                ts = ct.timestamp()
-                                file_esami_iniziale[int(idEsame)][5] = str(ts)
+                            print("Risulta che l'esame non è ancora stato passato!")
+                            print("- premere 1 per inserire l'esito")
+                            print("- premere un qualsiasi altro carattere per tornare al menu precedente")
+                            ris = input()
+                            if ris == "1":
                                 print()
-                                print("L'esame è stato passato in questa data e ora: " + str(ct))
-                            elif ris2 == "2":
-                                file_esami_iniziale[int(idEsame)][3] = "False"
-                                print()
-                                print("L'esame non è stato superato, per cui per rifarlo bisognerà rieffettuare il pagamento")
-                            else:
-                                print("Esito esame non inserito")
-                        status = 1
-                        break
+                                ris2 = input("Digitare 1 se l'esame è stato passato, mentre digitare 2 se non è stato passato: ")
+                                if ris2 == "1":
+                                    file_esami_iniziale[int(idEsame)][4] = 'passed'
+                                    ct = datetime.datetime.now()
+                                    ts = ct.timestamp()
+                                    file_esami_iniziale[int(idEsame)][5] = str(ts)
+                                    print()
+                                    print("L'esame è stato passato in questa data e ora: " + str(ct))
+                                elif ris2 == "2":
+                                    file_esami_iniziale[int(idEsame)][3] = "False"
+                                    print()
+                                    print("L'esame non è stato superato, per cui per rifarlo bisognerà rieffettuare il pagamento")
+                                else:
+                                    print("Esito esame non inserito")
+                            status = 1
+                            break
+                        elif esame[3] == "False":
+                            print("Risulta che l'esame non è ancora stato passato.")
+                            print("Prima di passarlo dovrai pagarlo.")
+                            status = 1
 
                     if esame[4] == 'passed':
                         print()
@@ -214,8 +213,6 @@ def change_esito_esame():
         print()
         print("non esiste un esame con tali matricola e materia")
             
-
-    import os
     os.remove("ESAMI.csv")
 
     f = open("ESAMI.csv", "a")
