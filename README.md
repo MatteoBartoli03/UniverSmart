@@ -14,5 +14,5 @@ Sviluppare un applicativo per la simulazione delle funzionalità minimali di un 
 • introduzione dei dati dello studente (cognome e nome) 
 • il numero di matricola deve essere un progressivo generato automaticamente  
 #### **OBIETTIVO 4)** 
-• Scrivere una funzione che permetta di versare uma cifra per ogni esame da sostenere  
+• Scrivere una funzione che permetta di versare una cifra per ogni esame da sostenere  
 • Scrivere una funzione che permetta di registrare l’avvenuto esame con esito e timestamp  (previo controllo di congruenza).
