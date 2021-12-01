@@ -1,5 +1,5 @@
 import os
-import datetime 
+import datetime
 
 def add_line_file(x):
     print()
@@ -29,8 +29,8 @@ def add_line_file(x):
         matricola = input("Inserisci l'id della matricola che deve compiere l'esame: ")
         materia= input ("Inserisci l'id della materia argomento di esame: ")
         esito_Pagamento = False
-        esito_Esame = False
-        timestamp = null
+        esito_Esame = "notPassed"
+        timestamp = ""
 
         file.write("\n"+ IdEsame +  ", " + matricola.capitalize() + ", " + materia.capitalize() +  ", " + str(esito_Pagamento) + ", " + str(esito_Esame) + ", " + str(timestamp))
         file.close()
@@ -58,12 +58,24 @@ def array_file(x):
 def print_file(x):
     file = array_file(x)
 
-    for line in file:
-        if len(line) == 3:
-            print(line[0] + " " + line[1] + " " + line[2])
-        else:
-            print(line[0] + " " + line[1] + " " + line[2] + " " + line[3] + " " + line[4] + " " + line[5])
+    if x=="materie.csv":
+        for line in file:
+            if (file.index(line)=="1"):
+                print(line[0] + " " + line[1] + " " + line[2]) ##provato a non far stampare € di fianco a prezzo esame
+            else:
+                print(line[0] + " " + line[1] + " " + line[2]+"€")
+    else:
+        for line in file:
+            if len(line) == 3:
+                print(line[0] + " " + line[1] + " " + line[2])
+            else:
+                print(line[0] + " " + line[1] + " " + line[2] + " " + line[3] + " " + line[4] + " " + line[5])
     return 0
+
+
+
+
+   
 
 def data_from_IdM():
     n = input("Inserisci il numero di matricola: ")
@@ -85,21 +97,23 @@ def exam_from_Idm():
 
 
     for a in file:
-        if (a[0] == str(num)):
+        if (a[1] == str(num)):
 
             for b in file1:
-                if (b[0] == a[1] ):
+                if (b[0] == a[2] ):
                     print(b[1])
             
 
     return 0
 
 def change_esito_pagamento():
+
+    import os
     file_esami_iniziale = array_file("esami.csv")
     print()
     matricola = str(input("inserisci il numero di matricola: "))
     materie = array_file("materie.csv")
-    materia = str(input("inserisci il numero corrispondente alla materia d'esame: "))
+    materia = str(input("inserisci l'id corrispondente alla materia d'esame: "))
     status = 0
 
     for esame in file_esami_iniziale:
@@ -152,6 +166,8 @@ def change_esito_pagamento():
             f.write("\n")
 
 def change_esito_esame():
+
+    import os
     file_esami_iniziale = array_file("esami.csv")
     print()
     matricola = str(input("inserisci il numero di matricola: "))
